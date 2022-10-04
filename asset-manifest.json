@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1bef3a09.css",
+    "main.js": "/static/js/main.8a19c88f.js",
+    "static/js/787.09c214f4.chunk.js": "/static/js/787.09c214f4.chunk.js",
+    "static/media/nasa-V4ZksNimxLk-unsplash.jpg": "/static/media/nasa-V4ZksNimxLk-unsplash.a521ac32cf6f2d12ca32.jpg",
+    "index.html": "/index.html",
+    "main.1bef3a09.css.map": "/static/css/main.1bef3a09.css.map",
+    "main.8a19c88f.js.map": "/static/js/main.8a19c88f.js.map",
+    "787.09c214f4.chunk.js.map": "/static/js/787.09c214f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1bef3a09.css",
+    "static/js/main.8a19c88f.js"
+  ]
+}
