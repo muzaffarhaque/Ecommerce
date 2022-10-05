@@ -2,7 +2,7 @@
   "name": "tothsi",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://muzaffarhaque.github.io/Ecommerce",
+  "homepage": "https://muzaffarhaque.github.io",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",

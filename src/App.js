@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
        
         <Routes>
-            <Route path='/Home' element={<Home />}/>
-            <Route path='/*' element={< Navigate to = "/Home" />}/>
+            <Route path='/*' element={<Home/>}/>
+            {/* <Route path='/*' element={< Navigate to = "/Home" />}/> */}
             <Route exact path="/Cart" element={<Cartpage />}/>
         </Routes>
 
