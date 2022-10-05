@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.1bef3a09.css",
-    "main.js": "/static/js/main.8a19c88f.js",
-    "static/js/787.09c214f4.chunk.js": "/static/js/787.09c214f4.chunk.js",
-    "static/media/nasa-V4ZksNimxLk-unsplash.jpg": "/static/media/nasa-V4ZksNimxLk-unsplash.a521ac32cf6f2d12ca32.jpg",
-    "index.html": "/index.html",
-    "main.1bef3a09.css.map": "/static/css/main.1bef3a09.css.map",
-    "main.8a19c88f.js.map": "/static/js/main.8a19c88f.js.map",
-    "787.09c214f4.chunk.js.map": "/static/js/787.09c214f4.chunk.js.map"
+    "main.css": "/Ecommerce/static/css/main.b0adc668.css",
+    "main.js": "/Ecommerce/static/js/main.0eac360f.js",
+    "static/js/787.09c214f4.chunk.js": "/Ecommerce/static/js/787.09c214f4.chunk.js",
+    "static/media/t2.jpg": "/Ecommerce/static/media/t2.89fb772a3224fc056bde.jpg",
+    "static/media/t4.jpg": "/Ecommerce/static/media/t4.29849603df51292b905a.jpg",
+    "static/media/t5.jpg": "/Ecommerce/static/media/t5.1bf419022a142a3965e9.jpg",
+    "static/media/t3.jpg": "/Ecommerce/static/media/t3.9a40aa729573511a7881.jpg",
+    "static/media/t1.jpg": "/Ecommerce/static/media/t1.f967cff0337eb4f5f771.jpg",
+    "index.html": "/Ecommerce/index.html",
+    "main.b0adc668.css.map": "/Ecommerce/static/css/main.b0adc668.css.map",
+    "main.0eac360f.js.map": "/Ecommerce/static/js/main.0eac360f.js.map",
+    "787.09c214f4.chunk.js.map": "/Ecommerce/static/js/787.09c214f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bef3a09.css",
-    "static/js/main.8a19c88f.js"
+    "static/css/main.b0adc668.css",
+    "static/js/main.0eac360f.js"
   ]
 }
