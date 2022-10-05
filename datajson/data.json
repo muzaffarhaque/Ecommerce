@@ -1,0 +1,94 @@
+{
+  "product": [
+     
+    {
+        "id": 1,
+        "name": "hoodies1",
+        "color": "red",
+        "price": "$854",
+        "size": "xxl",
+        "type": "hoodies",
+        "count":1
+      },
+    {
+      "id": 2,
+      "name": "hoodies1",
+      "color": "red",
+      "price": "$854",
+      "size": "xxl",
+      "count":1,
+      "total":0,
+      "type": "hoodies"
+    },
+    {
+      "id": 3,
+      "name": "hoodies2",
+      "color": "red",
+      "price": "$854",
+      "size": "m",
+      "count":1,
+      "total":0,
+      "type": "soter"
+    },
+    {
+      "id": 4,
+      "name": "hoodies2",
+      "color": "red",
+      "price": "$854",
+      "size": "S",
+      "count":1,
+      "total":0,
+      "type": "soter"
+    },
+    {
+      "id": 5,
+      "name": "hoodies4",
+      "color": "red",
+      "price": "$654",
+      "size": "S",
+      "count":1,
+      "total":0,
+      "type": "soter"
+    },
+    {
+      "id": 6,
+      "name": "hoodies4",
+      "color": "red",
+      "price": "$854",
+      "size": "L",
+      "count":1,
+      "total":0,
+      "type": "hoodies"
+    },
+    {
+      "id": 7,
+      "name": "Teshrt",
+      "color": "red",
+      "price": "$754",
+      "size": "L",
+      "count":1,
+      "total":0,
+      "type": "hoodies"
+    },
+    {
+      "id": 8,
+      "name": "hoodies4",
+      "color": "red",
+      "price": "$854",
+      "size": "M",
+      "count":1,
+      "total":1,
+      "type": "soter"
+    },
+    {
+      "id": 9,
+      "name": "Jeence",
+      "color": "red",
+      "price": "$854",
+      "size": "XL",
+      "count":1,
+      "total":0,
+      "type": "hoodies"
+    }
+  ]
+}

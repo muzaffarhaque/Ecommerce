@@ -14,6 +14,143 @@ let opt = [
     "formal",
     "Tridishnal"
 ]
+const product=[
+      
+    {
+        "id": 1,
+        "name": "jeens-hoodies1",
+        "color": "red",
+        "price":1,
+        "size": "xxl",
+        "type": "jeens",
+        img:require("../images/t1.jpg"),
+        "total":1,
+        "count":1
+
+      },
+    {
+      "id": 2,
+      "name": "Sothetech shirts",
+      "color": "red",
+      "price":1,
+      "size": "XXl",
+      "count":1,
+      "total":1,
+      img:require("../images/t2.jpg"),
+     "type": "shirts"
+    },
+    {
+      "id": 3,
+      "name": "honer T-shirt",
+      "color": "red",
+      "price": 1,
+      "size": "M",
+      "count":1,
+      "total":1,
+      img:require("../images/t3.jpg"), 
+       "type": "shirts"
+    },
+    {
+      "id": 4,
+      "name": "T-hoodies2",
+      "color": "red",
+      "price": 1,
+      "size": "S",
+      "count":1,
+      "total":1,
+      img:require("../images/t4.jpg"),
+      "type": "shirts"
+    },
+    {
+      "id": 5,
+      "name": "Hopy T-jeens",
+      "color": "red",
+      "price": 1,
+      "size": "S",
+      "count":1,
+      "total":1,
+      img:require("../images/t5.jpg"),
+      "type": "jeens"
+    },
+    {
+      "id": 6,
+      "name": "T-shet Onous",
+      "color": "red",
+      "price": 1,
+      "size": "L",
+      "count":1,
+      "total":1,
+      img:require("../images/t4.jpg"),
+      "type": "shirts"
+    },
+    {
+      "id": 7,
+      "name": "Teshrt",
+      "color": "red",
+      "price": 1,
+      "size": "L",
+      "count":1,
+      "total":1,
+      img:require("../images/t5.jpg"),
+      "type": "shirts"
+    },
+    {
+      "id": 8,
+      "name": "T-soter",
+      "color": "red",
+      "price": 1,
+      "size": "M",
+      "count":1,
+      "total":1,
+      img:require("../images/t3.jpg"),
+      "type": "soter"
+    },
+    {
+      "id": 9,
+      "name": "Uminouelsy cardo",
+      "color": "red",
+      "price": 1,
+      "size": "XL",
+      "count":1,
+      "total":1,
+      img:require("../images/t2.jpg"),
+      "type": "cargo"
+    }
+    ,
+    {
+      "id": 10,
+      "name": "Faradonsce Cargo",
+      "color": "red",
+      "price": 1,
+      "size": "XL",
+      "count":1,
+      "total":1,
+      img:require("../images/t2.jpg"),
+      "type": "cargo"
+    },
+    {
+      "id": 11,
+      "name": "T-cargo",
+      "color": "red",
+      "price": 1,
+      "size": "XL",
+      "count":1,
+      "total":1,
+      img:require("../images/t2.jpg"),
+      "type": "cargo"
+    },
+    {
+      "id": 12,
+      "name": "cargp-nce",
+      "color": "red",
+      "price": 1,
+      size: "L",
+      "count":1,
+      "total":1,
+      img:require("../images/t2.jpg"),
+      "type": "cargo"
+    }
+]
 const sopt = ["S", "M", "L", "XL", "XXL"]
 export default function Home() {
 
@@ -26,8 +163,7 @@ export default function Home() {
     const [slet,
         setSlet] = useState("")
 
-    const [product,
-        setProduct] = useState([]);
+    // const [product,setProduct] = useState([]);
 
     const [inp,
         setInp] = useState("")
@@ -38,19 +174,20 @@ setSlecteddata(data)
     }
 
 
-    const calldata = async() => {
-        let responce = await fetch("http://localhost:3500/product");
-        let info = await responce.json()
-        // console.log("call",info)
-        setProduct(info)
-    };
+    // const calldata = async() => {
+    //     let responce = await fetch("../../datajson/data.json");
+    //     let info = await responce.json()
+    //     // console.log("call",info)
+    //     setProduct(info)
+    // };
 
-    useEffect(() => {
-        calldata();
-    }, [slet])
+    // useEffect(() => {
+    //     calldata();
+    // }, [slet])
 
     function clickhandle() {
         setSlet("")
+        setSize("")
         console.log(slet)
     }
 
@@ -138,7 +275,7 @@ function sendcarddata(){
                     <th>Buy</th>
                 </tr>
 
-                <Table data={geting(product)} cartdata1={carddata} sleact={slet}/>
+                <Table data={geting(product)} cartdata1={carddata} size1={size}  sleact={slet}/>
 
             </tbody>
         </table>

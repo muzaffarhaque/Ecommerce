@@ -129,6 +129,9 @@
 }
 .second-row {
   background-color: white;
+  &:hover{
+    background-color: rgba(180, 180, 180,.2);
+  }
   td {
       font-size: calc(.2rem + 1vw);
       padding: 5px 1vw;

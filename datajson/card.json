@@ -1,0 +1,14 @@
+{
+  "Cart": [
+    {
+      "id": 3,
+      "name": "hoodies2",
+      "color": "red",
+      "price": "$854",
+      "size": "m",
+      "count": 1,
+      "total": 0,
+      "type": "soter"
+    }
+  ]
+}

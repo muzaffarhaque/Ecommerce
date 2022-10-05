@@ -9,7 +9,8 @@ import Home from './component/Home';
 function App() {
 
     // arr1=[{type:"hoodies1"},{type:"hoodies2"},{type:"hoodies4"}]
-    return ( <> <BrowserRouter>
+    return ( <> 
+    <BrowserRouter>
        
         <Routes>
             <Route path='/Home' element={<Home />}/>

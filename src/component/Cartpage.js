@@ -1,53 +1,105 @@
 import React, { useEffect, useState } from 'react'
 import "../App.scss"
-import {Navigate,NavLink,Link}from "react-router-dom"
+import {useNavigate,NavLink,Link}from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faArrowLeft,faTimes,faPlus,faMinus } from '@fortawesome/free-solid-svg-icons'
-import img1 from "../images/nasa-V4ZksNimxLk-unsplash.jpg"
-export default function Cartpage() {
-    const [cartinfo,setCartinfo]=useState([])
-     const [count,setCount]=useState([])
 
 
-async function feachingcartedata(){
-    fetch("http://localhost:3200/Cart",{
-        method:"GET",
-      
-     }).then((e)=>e.json().then((t)=>setCartinfo(t)))
-    
-}
-useEffect(()=>{feachingcartedata()},[])
 
-let removhandler=(i)=>{
-    // let newdata=[...cartinfo]
-    console.log(i)
-    {
-    fetch(`http://localhost:3200/Cart/${i}`,{
-        method:"DELETE"
-     }).then((er)=>er.json().then((ti)=>{
-        setCartinfo(ti);
-        feachingcartedata()
-    }))
+
+
+
+const getdatafromlocsto = () => {
+    const datag = localStorage.getItem("tasks");
+    if (datag) {
+        return JSON.parse(datag)
+    } else {
+        return []
     }
-    console.log(cartinfo[i],"ind")
-    console.log(cartinfo,"show")
-//     newdata.splice(i,1)
-//    setCartinfo(newdata)
-  
+
 }
-function increment(id){
+
+
+export default function Cartpage() {
+    const nevigate =useNavigate();
+     const [cartinfo,setCartinfo]=useState(getdatafromlocsto())
+     let [final,setFinal]=useState(0)
+
+
+// async function feachingcartedata(){
+//     fetch("http://localhost:3200/Cart",{
+//         method:"GET",
+      
+//      }).then((e)=>e.json().then((t)=>setCartinfo(t)))
+    
+// }
+// useEffect(()=>{feachingcartedata()},[])
+
+function addall(){
+    console.log("func call")
    
 }
- console.log(cartinfo,"add cart data")
- console.log(count,"o")
+
+let removhandler=(i)=>{
+     let newdata=[...cartinfo]
+    console.log(i)
+   
+    // {
+    // fetch(`http://localhost:3200/Cart/${i}`,{
+    //     method:"DELETE"
+    //  }).then((er)=>er.json().then((ti)=>{
+    //     setCartinfo(ti);
+    //     feachingcartedata()
+    // }))
+    // }
+    console.log(cartinfo[i],"ind")
+    console.log(cartinfo,"show")
+    newdata.splice(i,1)
+ 
+   setCartinfo(newdata)
+ 
+  
+}
+function addall(){
+    let total=0;
+    for(let i=0;i<cartinfo.length;i++){
+        total+=cartinfo[i].total
+        console.log("Totl =",total)
+    }
+   setFinal(total)
+}
+useEffect(()=>{
+    
+    localStorage.setItem("tasks",JSON.stringify(cartinfo))
+    
+  addall()
+},[cartinfo])
+
+function increment(id){
+   const data=JSON.parse(localStorage.getItem("tasks"))
+   data[id].count +=1
+   data[id].total +=data[id].price
+   setCartinfo(data)
+
+}
+function decriment(id){
+    const data=JSON.parse(localStorage.getItem("tasks"))
+    if(data[id].count>1){
+        data[id].count -=1
+        data[id].total -=data[id].price
+      
+       }
+    setCartinfo(data)
+}
+
+
   return (
     <div className="cdd-container">
         <div className="colum one">
         <div className="gotoback">
-                <NavLink to="/home" className="gobackbut">
-                < i><FontAwesomeIcon icon={faArrowLeft}/></i>
-                
-                </NavLink>
+                {/* <NavLink to="/home" className="gobackbut"> */}
+                < i  className="gobackbut"><FontAwesomeIcon onClick={()=>nevigate(-1)} icon={faArrowLeft}/></i>
+                {/* </NavLink> */}
                 
             </div>
             <table width="100%" cellSpacing={0} border={0} >
@@ -79,18 +131,18 @@ function increment(id){
                                 <tr key={itm.id} className="cart-first-row">
                                 <td>
                                     <div on className="cart-td-flex-container">
-                                        <div onClick={()=>removhandler(itm.id)}> <FontAwesomeIcon icon={faTimes}/> </div>
-                                        <div><img src={img1} width="100%" height="50%" alt="" /></div>
+                                        <div onClick={()=>removhandler(i)}> <FontAwesomeIcon icon={faTimes}/> </div>
+                                        <div><img src={itm.img} width="100%" height="50%" alt="" /></div>
                                         <div>{itm.name}</div>
                                     </div>
                                 </td>
-                                <td>{itm.price}</td>
+                                <td>&pound;{itm.price}</td>
                                 <td>
                                     <div className="cart-td-container">
-                                        <span> <i onClick={()=>{increment(itm.id)}}><FontAwesomeIcon icon={faPlus}/></i> </span><span>{count}</span><span><i onClick={()=>{setCount(count--)}} ><FontAwesomeIcon icon={faMinus}/></i></span>
+                                        <span> <i onClick={()=>{increment(i)}}><FontAwesomeIcon icon={faPlus}/></i> </span><span>{itm.count}</span><span><i onClick={()=>{decriment(i)}} ><FontAwesomeIcon icon={faMinus}/></i></span>
                                     </div>
                                 </td>
-                                <td>{itm.price}</td>
+                                <td>&pound;{itm.total}</td>
                             </tr>
                         // )
                         )
@@ -108,11 +160,11 @@ function increment(id){
                 </div>
                 <div >
                     <div>Subtotal</div>
-                    <div>$9887</div>
+                    <div>&pound;{final}</div>
                 </div>
                 <div>
                     <div>Total</div>
-                    <div>$98783</div>
+                    <div>&pound;{final}</div>
                 </div>
                 <div><button className='button2'>PROCEED TO CHECKOUT</button></div>
                 </div>
