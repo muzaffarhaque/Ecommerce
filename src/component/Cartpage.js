@@ -131,9 +131,9 @@ function decriment(id){
                                 <tr key={itm.id} className="cart-first-row">
                                 <td>
                                     <div on className="cart-td-flex-container">
-                                        <div onClick={()=>removhandler(i)}> <FontAwesomeIcon icon={faTimes}/> </div>
-                                        <div><img src={itm.img} width="100%" height="50%" alt="" /></div>
-                                        <div>{itm.name}</div>
+                                        <div onClick={()=>removhandler(i)}> <FontAwesomeIcon className='calcel-item' icon={faTimes}/> </div>
+                                        <div><img src={itm.images[1]}  className='card-imagee-aice' alt="" /></div>
+                                        <div>{itm.title}</div>
                                     </div>
                                 </td>
                                 <td>&pound;{itm.price}</td>
@@ -142,7 +142,7 @@ function decriment(id){
                                         <span> <i onClick={()=>{increment(i)}}><FontAwesomeIcon icon={faPlus}/></i> </span><span>{itm.count}</span><span><i onClick={()=>{decriment(i)}} ><FontAwesomeIcon icon={faMinus}/></i></span>
                                     </div>
                                 </td>
-                                <td>&pound;{itm.total}</td>
+                                <td>&pound;{itm.total.toFixed(2)}</td>
                             </tr>
                         // )
                         )
@@ -160,11 +160,11 @@ function decriment(id){
                 </div>
                 <div >
                     <div>Subtotal</div>
-                    <div>&pound;{final}</div>
+                    <div>&pound;{final.toFixed(2)}</div>
                 </div>
                 <div>
                     <div>Total</div>
-                    <div>&pound;{final}</div>
+                    <div>&pound;{final.toFixed(2)}</div>
                 </div>
                 <div><button className='button2'>PROCEED TO CHECKOUT</button></div>
                 </div>
